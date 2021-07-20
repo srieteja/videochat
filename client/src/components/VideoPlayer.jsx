@@ -13,13 +13,17 @@ const useStyles = makeStyles((theme) => ({
   gridContainer: {
     justifyContent: 'center',
     [theme.breakpoints.down('xs')]: {
-      flexDirection: 'column',
+      // flexDirection: 'row',
     },
+    // margin: 'left 5%',
   },
   paper: {
     padding: '10px',
-    border: '2px solid black',
     margin: '10px',
+    position: 'relative',
+    backgroundColor: 'black',
+    color: 'white',
+    borderColor: 'white',
   },
 }));
 
