@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className={classes.wrapper}>
       <div>
-        <h1 id="nav_bar">Video Chat Application</h1>
+        <h1 id="nav_bar">V I E W</h1>
       </div>
       <br />
       <VideoPlayer />
