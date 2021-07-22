@@ -40,20 +40,7 @@ const ContextProvider = ({ children }) => {
   const answerCall = () => {
     setCallAccepted(true);
 
-    const peer = new Peer({
-      initiator: false,
-      // config: { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }, { urls: 'stun:global.stun.twilio.com:3478?transport=udp' }] },
-      offerOptions: {},
-      answerOptions: {},
-      stream,
-      streams: [],
-      trickle: true,
-      allowHalfTrickle: false,
-      // codecs: 'vp9',
-      wrtc: {}, // RTCPeerConnection/RTCSessionDescription/RTCIceCandidate
-      objectMode: false,
-      sdpTransform: { sdp: 'codecsHandler.preferVp9' },
-    });
+    const peer = new Peer({ initiator: true, trickle: true, stream });
 
     peer.on('signal', (data) => {
       socket.emit('answerCall', { signal: data, to: call.from });
@@ -69,7 +56,7 @@ const ContextProvider = ({ children }) => {
   };
 
   const callUser = (id) => {
-    const peer = new Peer({ initiator: true, trickle: false, stream });
+    const peer = new Peer({ initiator: true, trickle: true, stream });
 
     peer.on('signal', (data) => {
       socket.emit('callUser', { userToCall: id, signalData: data, from: me, name });
