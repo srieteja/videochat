@@ -42,16 +42,17 @@ const ContextProvider = ({ children }) => {
 
     const peer = new Peer({
       initiator: false,
-      config: { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }, { urls: 'stun:global.stun.twilio.com:3478?transport=udp' }] },
+      // config: { iceServers: [{ urls: 'stun:stun.l.google.com:19302' }, { urls: 'stun:global.stun.twilio.com:3478?transport=udp' }] },
       offerOptions: {},
       answerOptions: {},
       stream,
       streams: [],
       trickle: true,
       allowHalfTrickle: false,
-      codecs: 'vp9',
+      // codecs: 'vp9',
       wrtc: {}, // RTCPeerConnection/RTCSessionDescription/RTCIceCandidate
       objectMode: false,
+      sdpTransform: { sdp: 'codecsHandler.preferVp9' },
     });
 
     peer.on('signal', (data) => {
