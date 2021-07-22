@@ -18,11 +18,11 @@ const useStyles = makeStyles((theme) => ({
     // margin: 'left 5%',
   },
   paper: {
-    padding: '10px',
+    padding: '4px',
     margin: '10px',
     position: 'relative',
-    backgroundColor: 'black',
-    color: 'white',
+    backgroundColor: 'lightgreen',
+    // color: 'white',
     borderColor: 'white',
   },
 }));

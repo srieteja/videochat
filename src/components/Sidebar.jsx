@@ -14,7 +14,7 @@ const useStyles = makeStyles(() => ({
     width: '100%',
   },
   container: {
-    marginTop: 40,
+    marginTop: 20,
     width: '600px',
     margin: '35px auto',
     padding: 0,

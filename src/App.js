@@ -13,6 +13,7 @@ const App = () => {
       <div>
         <h1 id="nav_bar">Video Chat Application</h1>
       </div>
+      <br />
       <VideoPlayer />
       <Sidebar>
         <Notifications />
